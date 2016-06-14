@@ -1,3 +1,4 @@
+"use strict";
 class ProgrammesList {
     
     constructor(bachelor, master, phd, prof) {
