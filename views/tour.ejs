@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include templates/head.ejs %>
+  </head>
+  <body>
+    <% include templates/nav.ejs %>
+    <div class="container">
+      <h2 class="center">Edit Tour</h2>
+
+      <form class="col-sm-6 col-sm-offset-3" id="eventForm" name="traki">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Date</label>
+          <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Title">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Info</label>
+          <textarea class="form-control" rows="5" id="bla"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="text">Link</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Lecturer">
+        </div>
+        <button id="btn" type="submit" class="btn btn-primary">Edit</button>
+      </form>
+    </div>
+  </body>
+</html>

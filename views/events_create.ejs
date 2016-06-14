@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include templates/head.ejs %>
+  </head>
+  <body>
+    <% include templates/nav.ejs %>
+    <div class="container">
+      <h2 class="center">Create New Event</h2>
+
+      <form class="col-sm-6 col-sm-offset-3" id="eventForm" name="traki">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Title</label>
+          <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Title">
+        </div>
+        <div class="form-group col-sm-6" style="padding-left:0px">
+          <label for="exampleInputPassword1">Day</label>
+          <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Start Date" name="date">
+        </div>
+        <div class="form-group col-sm-6" style="padding-right:0px">
+          <label for="exampleInputPassword1">Hour</label>
+          <input type="time" class="form-control" id="exampleInputPassword1" placeholder="End Date" name="time">
+        </div>
+        <div class="form-group">
+          <label for="text">Lecturer</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Lecturer">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Title</label>
+          <textarea class="form-control" rows="5" id="bla"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <input type="file" id="exampleInputFile" name="file">
+          <div id="canvasloader-container" class="wrapper"></div>
+        </div>
+        <button id="btn" type="submit" class="btn btn-primary">Create</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -7,6 +7,11 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var programmes = require('./routes/programmes');
 var competitions = require('./routes/competitions');
+var events = require('./routes/events');
+var events_create = require('./routes/events_create');
+var events_edit = require('./routes/events_edit');
+var meetings = require('./routes/meetings');
+var tour = require('./routes/tour');
 
 var app = express();
 
@@ -25,6 +30,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/programmes', programmes);
 app.use('/competitions', competitions);
+app.use('/events', events);
+app.use('/events/create', events_create);
+app.use('/events/edit', events_edit);
+app.use('/meetings', meetings);
+app.use('/tour', tour);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
