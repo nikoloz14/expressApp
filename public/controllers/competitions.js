@@ -1,4 +1,4 @@
-
+"use strict";
 function deleteCompetition(competition, row) {
   var ref = firebase.database().ref('forKids/competitions/' + competition.id);
   ref.remove(function(error) {
