@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include templates/head.ejs %>
+    <script src="/javascripts/loader.js"></script>
+    <script src="/controllers/programmes.js"></script>
+  </head>
+  <body>
+    <% include templates/nav.ejs %>
+    <div class="container">
+      <h2>პროგრამები</h2>
+      <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#bachelor">ბაკალავრიატი</a></li>
+          <li><a data-toggle="tab" href="#master">მაგისტრატურა</a></li>
+          <li><a data-toggle="tab" href="#phd">დოქტორანტურა</a></li>
+          <li><a data-toggle="tab" href="#prof">პროფესიული</a></li>
+      </ul>
+      <div class="tab-content">
+      <div id="bachelor" class="tab-pane fade in active">
+          <h2>თავისუფალი უნივერსიტეტი</h2>
+          <div class="row">
+              <div class="col-sm-3">
+                  <h4>პროგრამების სია</h4>
+              </div>
+              <div class="form-group col-sm-9">
+                  <div class="form-inline form-right">
+                      <form class="createform">
+                          <label for="exampleInputEmail1">დასახელება:</label>
+                          <input type="text" name="title" class="form-control" placeholder="დასახელება"/>
+                          <input type="hidden" name="prog" value="bachelor"/>
+                          <input type="hidden" name="school" value="freeuni"/>
+                          <input type="hidden" name="tableid" value="bachelorfree"/>
+                          <button type="submit" class="btn btn-primary btn-md btnload" data-loading-text="Loading...">ახლის შექმნა</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <table id="bachelorfree" class="table table-striped">
+              <thead>
+                  <tr>
+                      <th class="col-md-11">დასახელება</th>
+                      <th class="col-md-1">ქმედება</th>
+                  </tr>
+              </thead>
+              <tbody>
+              </tbody>
+          </table>
+          <hr style="background-color:#337ab7;"/>
+          <h2>აგრარული უნივერსიტეტი</h2>
+          <div class="row">
+              <div class="col-sm-3">
+                  <h4>პროგრამების სია</h4>
+              </div>
+              <div class="form-group col-sm-9">
+                  <div class="form-inline form-right">
+                      <form class="createform">
+                          <label for="exampleInputEmail1">დასახელება:</label>
+                          <input type="text" name="title" class="form-control" placeholder="დასახელება"/>
+                          <input type="hidden" name="prog" value="bachelor"/>
+                          <input type="hidden" name="school" value="agruni"/>
+                          <input type="hidden" name="tableid" value="bacheloragr"/>
+                          <button type="submit" class="btn btn-primary btn-md btnload" data-loading-text="Loading...">ახლის შექმნა</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <table id="bacheloragr" class="table table-striped">
+              <thead>
+                  <tr>
+                      <th class="col-md-11">დასახელება</th>
+                      <th class="col-md-1">ქმედება</th>
+                  </tr>
+              <tbody></tbody>
+              </thead>
+          </table>
+      </div>
+      <div id="master" class="tab-pane fade">
+          <h2>თავისუფალი უნივერსიტეტი</h2>
+          <div class="row">
+              <div class="col-sm-3">
+                  <h4>პროგრამების სია</h4>
+              </div>
+              <div class="form-group col-sm-9">
+                  <div class="form-inline form-right">
+                      <form class="createform">
+                          <label for="exampleInputEmail1">დასახელება:</label>
+                          <input type="text" name="title" class="form-control" placeholder="დასახელება"/>
+                          <input type="hidden" name="prog" value="master"/>
+                          <input type="hidden" name="school" value="freeuni"/>
+                          <input type="hidden" name="tableid" value="masterfree"/>
+                          <button type="submit" class="btn btn-primary btn-md btnload" data-loading-text="Loading...">ახლის შექმნა</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <table id="masterfree" class="table table-striped">
+              <thead>
+                  <tr>
+                      <th class="col-md-11">დასახელება</th>
+                      <th class="col-md-1">ქმედება</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
+          <hr style="background-color:#337ab7;"/>
+          <h2>აგრარული უნივერსიტეტი</h2>
+          <div class="row">
+              <div class="col-sm-3">
+                  <h4>პროგრამების სია</h4>
+              </div>
+              <div class="form-group col-sm-9">
+                  <div class="form-inline form-right">
+                      <form class="createform">
+                          <label for="exampleInputEmail1">დასახელება:</label>
+                          <input type="text" name="title" class="form-control" placeholder="დასახელება"/>
+                          <input type="hidden" name="prog" value="master"/>
+                          <input type="hidden" name="school" value="agruni"/>
+                          <input type="hidden" name="tableid" value="masteragr"/>
+                          <button type="submit" class="btn btn-primary btn-md btnload" data-loading-text="Loading...">ახლის შექმნა</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <table id="masteragr" class="table table-striped">
+              <thead>
+                  <tr>
+                      <th class="col-md-11">დასახელება</th>
+                      <th class="col-md-1">ქმედება</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
+      </div>
+      <div id="phd" class="tab-pane fade">
+          <h2>თავისუფალი უნივერსიტეტი</h2>
+          <div class="row">
+              <div class="col-sm-3">
+                  <h4>პროგრამების სია</h4>
+              </div>
+              <div class="form-group col-sm-9">
+                  <div class="form-inline form-right">
+                      <form class="createform">
+                          <label for="exampleInputEmail1">დასახელება:</label>
+                          <input type="text" name="title" class="form-control" placeholder="დასახელება"/>
+                          <input type="hidden" name="prog" value="phd"/>
+                          <input type="hidden" name="school" value="freeuni"/>
+                          <input type="hidden" name="tableid" value="phdfree"/>
+                          <button type="submit" class="btn btn-primary btn-md btnload" data-loading-text="Loading...">ახლის შექმნა</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <table id="phdfree" class="table table-striped">
+              <thead>
+                  <tr>
+                      <th class="col-md-11">დასახელება</th>
+                      <th class="col-md-1">ქმედება</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
+          <hr style="background-color:#337ab7;"/>
+          <h2>აგრარული უნივერსიტეტი</h2>
+          <div class="row">
+              <div class="col-sm-3">
+                  <h4>პროგრამების სია</h4>
+              </div>
+              <div class="form-group col-sm-9">
+                  <div class="form-inline form-right">
+                      <form class="createform">
+                          <label for="exampleInputEmail1">დასახელება:</label>
+                          <input type="text" name="title" class="form-control" placeholder="დასახელება"/>
+                          <input type="hidden" name="prog" value="phd"/>
+                          <input type="hidden" name="school" value="agruni"/>
+                          <input type="hidden" name="tableid" value="phdagr"/>
+                          <button type="submit" class="btn btn-primary btn-md btnload" data-loading-text="Loading...">ახლის შექმნა</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <table id="phdagr" class="table table-striped">
+              <thead>
+                  <tr>
+                      <th class="col-md-11">დასახელება</th>
+                      <th class="col-md-1">ქმედება</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
+      </div>
+      <div id="prof" class="tab-pane fade">
+          <h2>თავისუფალი უნივერსიტეტი</h2>
+          <div class="row">
+              <div class="col-sm-3">
+                  <h4>პროგრამების სია</h4>
+              </div>
+              <div class="form-group col-sm-9">
+                  <div class="form-inline form-right">
+                      <form class="createform">
+                          <label for="exampleInputEmail1">დასახელება:</label>
+                          <input type="text" name="title" class="form-control" placeholder="დასახელება"/>
+                          <input type="hidden" name="prog" value="prof"/>
+                          <input type="hidden" name="school" value="freeuni"/>
+                          <input type="hidden" name="tableid" value="proffree"/>
+                          <button type="submit" class="btn btn-primary btn-md btnload" data-loading-text="Loading...">ახლის შექმნა</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <table id="proffree" class="table table-striped">
+              <thead>
+                  <tr>
+                      <th class="col-md-11">დასახელება</th>
+                      <th class="col-md-1">ქმედება</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
+          <hr style="background-color:#337ab7;"/>
+          <h2>აგრარული უნივერსიტეტი</h2>
+          <div class="row">
+              <div class="col-sm-3">
+                  <h4>პროგრამების სია</h4>
+              </div>
+              <div class="form-group col-sm-9">
+                  <div class="form-inline form-right">
+                      <form class="createform">
+                          <label for="exampleInputEmail1">დასახელება:</label>
+                          <input type="text" name="title" class="form-control" placeholder="დასახელება"/>
+                          <input type="hidden" name="prog" value="prof"/>
+                          <input type="hidden" name="school" value="agruni"/>
+                          <input type="hidden" name="tableid" value="profagr"/>
+                          <button type="submit" class="btn btn-primary btn-md btnload" data-loading-text="Loading...">ახლის შექმნა</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <table id="profagr" class="table table-striped">
+              <thead>
+                  <tr>
+                      <th class="col-md-11">დასახელება</th>
+                      <th class="col-md-1">ქმედება</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
+      </div>
+    </div>
+  </body>
+</html>
