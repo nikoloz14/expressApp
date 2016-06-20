@@ -15,25 +15,22 @@ function postToDatabase(title, date, lecturer, room, descr) {
   console.log("sqib");
   var storageRef = firebase.storage().ref();
 	var newRef = firebase.database().ref('events/').push();
-	alert("ra temaa");
 	if (file) {
-	  alert("es temaa");
 	  var metadata = {
 		  'contentType': file.type
 		};
-		alert("esec temaa");
 		var uploadTask = storageRef.child('images/events/' + newRef.key + "/" + file.name).put(file, metadata);
     uploadTask.on('state_changed', null, function(error) {
       alert('Upload failed:' + error);
     }, function() {
-      alert("gut");
       var url = uploadTask.snapshot.metadata.downloadURLs[0];
       var values = {
         title: title,
         date: date,
         lecturer: lecturer,
         room: room,
-        description: descr
+        description: descr,
+        imageUrl: url
       };
       newRef.set(values, function(error) {
         if (error) {
@@ -43,7 +40,6 @@ function postToDatabase(title, date, lecturer, room, descr) {
         }
       });
     });
-    alert("xaxa");
   } else {
     alert("please upload image");
   }
