@@ -87,5 +87,4 @@ window.onload = function() {
             }
         }
     });
-    //https://freeuni-admin-nikoloz14.c9users.io/competitions/index.php
 }

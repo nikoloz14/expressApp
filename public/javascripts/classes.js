@@ -38,3 +38,17 @@ class Competition {
     }
     
 }
+
+class Event {
+    
+    constructor(title,date,description,imageURL,lecturer,room, id) {
+        this.title = title;
+        this.id = id;
+        this.imageURL = imageURL;
+        this.date = date;
+        this.description = description;
+        this.lecturer = lecturer;
+        this.room = room;
+    }
+    
+}

@@ -3,6 +3,8 @@
   <head>
     <title><%= title %></title>
     <% include templates/head.ejs %>
+    <script src="/javascripts/loader.js"></script>
+    <script src="/controllers/events.js"></script>
   </head>
   <body>
     <% include templates/nav.ejs %>
@@ -17,14 +19,19 @@
           </div>
           <div class="form-group col-md-6">
             <div class="form-inline form-right">
-                <button class="btn btn-primary btn-md">ახლის შექმნა</button>
+                <button class="btn btn-primary btn-md" onclick="location.href='/events/create';">ახლის შექმნა</button>
             </div>
           </div>
         </div>
         <table id="events" class="table table-striped">
           <thead>
             <tr>
-              <th class="col-md-1">დასახელება</th>
+              <th class="col-md-2">დასახელება</th>
+              <th class="col-md-2">თარიღი და დრო</th>
+              <th class="col-md-2">ლექტორი</th>
+              <th class="col-md-1">აუდიტორია</th>
+              <th class="col-md-3">აღწერა</th>
+              <th class="col-md-3">სურათი</th>
               <th class="col-md-1">ქმედება</th>
             </tr>
           </thead>
