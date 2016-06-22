@@ -19,6 +19,10 @@ window.onload = function() {
         if (parentObj) {
             var tmp = parentObj[0];
             if (tmp){
+                console.log(parentObj.length;
+                console.log(tmp.dates);
+                console.log(tmp.info);
+                console.log(tmp.registerLink);
                 date.value = tmp.dates;
                 info.value = tmp.info;
                 link.value = tmp.registerLink;
