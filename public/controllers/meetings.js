@@ -19,9 +19,9 @@ window.onload = function() {
         if (parentObj) {
             var tmp = parentObj[0];
             if (tmp){
-                date.textContent = tmp.dates;
-                info.textContent = tmp.info;
-                link.textContent = tmp.registerLink;
+                date.value = tmp.dates;
+                info.value = tmp.info;
+                link.value = tmp.registerLink;
             } 
 
         }
