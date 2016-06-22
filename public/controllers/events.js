@@ -12,7 +12,7 @@ function deleteEvent(event, row) {
       alert("Error on deletion. Try again later!");
     } else {
       // Create a reference to the file to delete
-      var desertRef = firebase.storage().ref().child('images/events/'+event.id);
+      var desertRef = firebase.storage().ref().child('images/events/'+event.id+'/screen.png');
       
       // Delete the file
       desertRef.delete().then(function() {
