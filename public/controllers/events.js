@@ -5,7 +5,7 @@ function toDateTime(secs) {
     return t;
 }
 
-function deleteEvent(Event, row) {
+function deleteEvent(event, row) {
   var ref = firebase.database().ref('events/' + event.id);
   ref.remove(function(error) {
     if (error) {
@@ -24,19 +24,19 @@ function addEventToTable(event, tableBody) {
   td.appendChild(text);
   var td1 = document.createElement('TD');
   td1.className = "col-md-2";
-  var text = document.createTextNode(event.lecturer);
+  text = document.createTextNode(event.lecturer);
   td1.appendChild(text);
   var td2 = document.createElement('TD');
   td2.className = "col-md-1";
-  var text = document.createTextNode(event.room);
+  text = document.createTextNode(event.room);
   td2.appendChild(text);
   var td3 = document.createElement('TD');
   td3.className = "col-md-3";
-  var text = document.createTextNode(event.description);
+  text = document.createTextNode(event.description);
   td3.appendChild(text);
   var tdt = document.createElement('TD');
   tdt.className = "col-md-2";
-  var text = document.createTextNode(toDateTime(event.date));
+  text = document.createTextNode(toDateTime(event.date));
   tdt.appendChild(text);
   var td4 = document.createElement('TD');
   td4.className = "col-md-3";
@@ -49,7 +49,7 @@ function addEventToTable(event, tableBody) {
   var btn = document.createElement('button');
   btn.className = 'btn btn-danger btn-sm btndelete';
   btn.addEventListener("click", function() {
-    deleteEvent(event, tr)
+    deleteEvent(event, tr);
   }, false);
   btn.innerHTML = 'DELETE';
   td5.appendChild(btn);
