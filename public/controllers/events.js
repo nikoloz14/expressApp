@@ -18,7 +18,7 @@ function deleteEvent(event, row) {
       desertRef.delete().then(function() {
         // File deleted successfully
       }).catch(function(error) {
-        alert("Error on image deletion. Try again later!");
+        alert("Error on image deletion. Try again later! "+error);
       });
       row.parentNode.removeChild(row);
     }
