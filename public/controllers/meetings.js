@@ -10,14 +10,8 @@ window.onload = function() {
         var info = document.getElementById('info');
         var link = document.getElementById('link');
         
-        var arr = [];
-        if (parentObj.constructor !== Array) {
-          parentObj = $.map(parentObj, function(value, index) {
-            return [value, index];
-          });
-        }
-        if (parentObj) {
-            var tmp = parentObj[0];
+        
+            var tmp = parentObj;
             if (tmp){
                 console.log(parentObj.length);
                 console.log(tmp.dates);
@@ -28,6 +22,6 @@ window.onload = function() {
                 link.value = tmp.registerLink;
             } 
 
-        }
+        
     });
 }
