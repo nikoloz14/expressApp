@@ -40,10 +40,14 @@ function addEventToTable(event, tableBody) {
   tdt.appendChild(text);
   var td4 = document.createElement('TD');
   td4.className = "col-md-3";
+  var a = document.createElement('a');
+  a.setAttribute("href", "#");
+  a.className = 'pop';
   var img = document.createElement('img');
-  
+  img.setAttribute("style", "width:80px; height:80px;")
   img.src=event.imageURL;
-  td4.appendChild(img);
+  a.appendChild(img)
+  td4.appendChild(a);
   var td5 = document.createElement('TD');
   td5.className = "col-md-1";
   var btn = document.createElement('button');
@@ -80,13 +84,18 @@ window.onload = function() {
             return [value, index];
           });
         }
+        console.log(parentObj);
         if (parentObj) {
             for (var i = 0; i < parentObj.length; i++) {
                 var tmp = parentObj[i];
                 if (tmp) 
                     addEventToTable(new Event(tmp.title,tmp.date,tmp.description,
-                    tmp.imageURL,tmp.lecturer,tmp.room,parentObj[++i]), tableBody);
+                    tmp.imageUrl,tmp.lecturer,tmp.room,parentObj[++i]), tableBody);
             }
+            $('.pop').on('click', function() {
+        			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+        			$('#imagemodal').modal('show');   
+        		});
         }
     });
 }
