@@ -3,24 +3,22 @@
   <head>
     <title><%= title %></title>
     <% include templates/head.ejs %>
+    <script src="/javascripts/loader.js"></script>
+    <script src="/controllers/tour.js"></script>
   </head>
   <body>
     <% include templates/nav.ejs %>
     <div class="container">
-      <h2 class="center">Edit Tour</h2>
+      <h2 class="center">ტური კამპუსში</h2>
 
       <form class="col-sm-6 col-sm-offset-3" id="eventForm" name="traki">
         <div class="form-group">
-          <label for="exampleInputEmail1">Date</label>
-          <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Title">
+          <label for="text">Link</label>
+          <input type="text" class="form-control" id="link" placeholder="Lecturer">
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Info</label>
-          <textarea class="form-control" rows="5" id="bla"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="text">Link</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Lecturer">
+          <textarea class="form-control" rows="5" id="info"></textarea>
         </div>
         <button id="btn" type="submit" class="btn btn-primary">Edit</button>
       </form>
