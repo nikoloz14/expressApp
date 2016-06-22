@@ -7,20 +7,20 @@
   <body>
     <% include templates/nav.ejs %>
     <div class="container">
-      <h2 class="center">Edit Meetings</h2>
+      <h2 class="center">გაცნობითები</h2>
 
-      <form class="col-sm-6 col-sm-offset-3" id="eventForm" name="traki">
+      <form class="col-sm-6 col-sm-offset-3" id="meetingForm" name="meet">
         <div class="form-group">
-          <label for="exampleInputEmail1">Date</label>
-          <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Title">
+          <label for="date">თარიღი</label>
+          <input type="text" name="title" class="form-control" id="date">
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Info</label>
-          <textarea class="form-control" rows="5" id="bla"></textarea>
+          <label for="info">ინფორმაცია</label>
+          <textarea class="form-control" rows="5" id="info"></textarea>
         </div>
         <div class="form-group">
-          <label for="text">Link</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Lecturer">
+          <label for="link">სარეგისტრაციო ფორმის ლინკი</label>
+          <input type="text" class="form-control" id="link">
         </div>
         <button id="btn" type="submit" class="btn btn-primary">Edit</button>
       </form>
