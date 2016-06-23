@@ -3,40 +3,55 @@
   <head>
     <title><%= title %></title>
     <% include templates/head.ejs %>
+    <script src="/javascripts/datetime.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/datetime.css"/>
+    <script src="/controllers/events_edit.js"></script>
+    <script src="/javascripts/loader.js"></script>
   </head>
   <body>
     <% include templates/nav.ejs %>
     <div class="container">
-      <h2 class="center">Edit Event</h2>
+      <h2 class="center">ივენთის დამატება</h2>
+      <hr/>
 
-      <form class="col-sm-6 col-sm-offset-3" id="eventForm" name="traki">
+      <form class="col-sm-6 col-sm-offset-3" id="eventForm" placeholder="Lecturer">
         <div class="form-group">
-          <label for="exampleInputEmail1">Title</label>
-          <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Title">
-        </div>
-        <div class="form-group col-sm-6" style="padding-left:0px">
-          <label for="exampleInputPassword1">Start Date</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Start Date">
-        </div>
-        <div class="form-group col-sm-6" style="padding-right:0px">
-          <label for="exampleInputPassword1">End Date</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="End Date">
+          <label for="exampleInputEmail1">დასახელება</label>
+          <input type="text" name="title" class="form-control" id="title" placeholder="დასახელება">
         </div>
         <div class="form-group">
-          <label for="text">Lecturer</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Lecturer">
+          <label for="text">თარიღი და დრო</label>
+          <input type="text" name="datetimepicker" id="datetimepicker" class="form-control" placeholder="d/m/Y H:i"/>
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Title</label>
-          <textarea class="form-control" rows="5" id="bla"></textarea>
+          <label for="text">ლექტორი</label>
+          <input type="text" class="form-control" name="lecturer" id="lecturer" placeholder="ლექტორი">
+        </div>
+         <div class="form-group">
+          <label for="text">აუდიტორია</label>
+          <input type="text" class="form-control" name="room" id="room" placeholder="აუდიტორია">
         </div>
         <div class="form-group">
-          <label for="exampleInputFile">File input</label>
+          <label for="exampleInputEmail1">აღწერა</label>
+          <textarea class="form-control" rows="5" name="descr" id="descr" placeholder="აღწერა"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">სურათი</label>
           <input type="file" id="exampleInputFile" name="file">
           <div id="canvasloader-container" class="wrapper"></div>
         </div>
-        <button id="btn" type="submit" class="btn btn-primary">Edit</button>
+        <p hidden>location.href</p>
+        <button id="btn" type="submit" class="btn btn-primary" data-loading-text="Loading...">დამატება</button>
       </form>
     </div>
+    
+    <script>
+      var $datetime = $('#datetimepicker').datetimepicker({
+        dayOfWeekStart : 1,
+        step:10,
+        format: "d/m/Y H:i"
+      });
+      $.datetimepicker.setLocale("ka");
+    </script>
   </body>
 </html>

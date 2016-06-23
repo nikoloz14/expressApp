@@ -59,13 +59,51 @@ function addEventToTable(event, tableBody) {
   td4.appendChild(a);
   var td5 = document.createElement('TD');
   td5.className = "col-md-1";
+  /*<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div>*/
+  var div = document.createElement('div');
+  /*div.innerHTML = '<div class="dropdown">\
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Action\
+    <span class="caret"></span></button>\
+    <ul class="dropdown-menu">\
+      <li id="editevent"><a href="#">Edit</a></li>\
+      <li id="deleteevent"><a href="#">Delete</a></li>\
+    </ul>\
+  </div>'*/
+  
+  div.className = "dropdown";
   var btn = document.createElement('button');
-  btn.className = 'btn btn-danger btn-sm btndelete';
-  btn.addEventListener("click", function() {
+  btn.className = 'btn btn-primary dropdown-toggle';
+  btn.setAttribute("data-toggle", "dropdown");
+  btn.setAttribute("type", "button");
+  btn.innerHTML = 'Action <span class="caret"></span>';
+  div.appendChild(btn);
+  var ul = document.createElement('ul');
+  ul.className = "dropdown-menu";
+  var li1 = document.createElement('li');
+  var a1 = document.createElement("a");
+  a1.setAttribute("href", "/events/edit?id=" + event.id);
+  a1.innerHTML = "Edit";
+  li1.appendChild(a1);
+  var li2 = document.createElement('li');
+  var a2 = document.createElement("a");
+  a2.setAttribute("href", "#");
+  a2.innerHTML = "Delete";
+  li2.appendChild(a2);
+  li2.addEventListener("click", function() {
     deleteEvent(event, tr);
   }, false);
-  btn.innerHTML = 'DELETE';
-  td5.appendChild(btn);
+  ul.appendChild(li1);
+  ul.appendChild(li2);
+  div.appendChild(ul);
+  td5.appendChild(div);
   tr.appendChild(td);
   tr.appendChild(tdt);
   tr.appendChild(td1);
@@ -93,7 +131,6 @@ window.onload = function() {
             return [value, index];
           });
         }
-        console.log(parentObj);
         if (parentObj) {
             for (var i = 0; i < parentObj.length; i++) {
                 var tmp = parentObj[i];
