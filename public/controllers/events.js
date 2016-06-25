@@ -12,14 +12,15 @@ function deleteEvent(event, row) {
       alert("Error on deletion. Try again later!");
     } else {
       // Create a reference to the file to delete
-      var desertRef = firebase.storage().ref('images/events/'+event.id);
+      var desertRef = firebase.storage().ref().child('images/events/'+event.id+'/image');
       
       // Delete the file
       desertRef.delete().then(function() {
         // File deleted successfully
       }).catch(function(error) {
-        alert("Error on image deletion. Try again later! "+error);
+        alert("Error on image deletion. Try again later! "+error+">>"+desertRef.name);
       });
+      
       row.parentNode.removeChild(row);
     }
   });

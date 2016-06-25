@@ -17,7 +17,7 @@ function postToDatabase(title, date, lecturer, room, descr) {
 	  var metadata = {
 		  'contentType': file.type
 		};
-		var uploadTask = storageRef.child('images/events/' + newRef.key + "/" + file.name).put(file, metadata);
+		var uploadTask = storageRef.child('images/events/' + newRef.key + "/" + "image").put(file, metadata);
     uploadTask.on('state_changed', null, function(error) {
       alert('Upload failed:' + error);
       btn.button('reset');
