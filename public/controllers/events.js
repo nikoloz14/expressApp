@@ -41,7 +41,7 @@ function addEventToTable(event, tableBody) {
 	td2.appendChild(text);
 	var td3 = document.createElement('TD');
 	td3.className = "col-md-3";
-	text = document.createTextNode(event.description);
+	text = document.createTextNode(event.descript);
 	td3.appendChild(text);
 	var tdt = document.createElement('TD');
 	tdt.className = "col-md-2";

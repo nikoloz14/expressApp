@@ -28,7 +28,7 @@ function postToDatabase(title, date, lecturer, room, descr) {
 				date: date,
 				lecturer: lecturer,
 				room: room,
-				description: descr,
+				descript: descr,
 				imageUrl: url
 			};
 			newRef.set(values, function(error) {
