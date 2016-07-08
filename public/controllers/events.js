@@ -41,7 +41,7 @@ function addEventToTable(event, tableBody) {
 	td2.appendChild(text);
 	var td3 = document.createElement('TD');
 	td3.className = "col-md-3";
-	text = document.createTextNode(event.descript);
+	text = document.createTextNode(event.description);
 	td3.appendChild(text);
 	var tdt = document.createElement('TD');
 	tdt.className = "col-md-2";
@@ -137,7 +137,7 @@ window.onload = function() {
 					for (var i = 0; i < parentObj.length; i++) {
 						var tmp = parentObj[i];
 						if (tmp)
-							addEventToTable(new Event(tmp.title, tmp.date, tmp.description,
+							addEventToTable(new Event(tmp.title, tmp.date, tmp.descript,
 								tmp.imageUrl, tmp.lecturer, tmp.room, parentObj[++i]), tableBody);
 					}
 					$('.pop').on('click', function() {
